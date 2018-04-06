@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Hinges
+vid: cabinetry_hinges
+description: Hinges
+hierarchy: 0
+weight: 0

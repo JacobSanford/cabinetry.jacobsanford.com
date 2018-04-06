@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Saw Blades'
+vid: cabinetry_saw_blades
+description: 'Saw blades used in cutting wood pieces.'
+hierarchy: 0
+weight: 0

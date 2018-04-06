@@ -1,0 +1,7 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Standard Saw Blade'
+    cut_width: 3.175

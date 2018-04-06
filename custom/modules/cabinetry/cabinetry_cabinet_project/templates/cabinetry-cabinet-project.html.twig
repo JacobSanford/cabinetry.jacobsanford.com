@@ -1,0 +1,18 @@
+{% if sheet_list|render|striptags|trim is not empty %}
+  {{ attach_library('cabinetry_cabinet_project/cabinet-project-display') }}
+
+  <img id="cabinetry-project-project-photo" src="{{ project_photo_uri }}">
+
+  {{ summary_title }}
+  {{ summary }}
+
+  {{ sheet_title }}
+  {{ sheet_list }}
+
+  {{ solids_title }}
+  {{ solids_list }}
+{% else %}
+  {% trans %}
+    No cabinet modules have been found. Add one via the 'Cabinet Modules' tab above.
+  {% endtrans %}
+{% endif %}

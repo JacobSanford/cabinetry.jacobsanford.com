@@ -1,0 +1,5 @@
+entity.cabinetry_cabinet_project.collection:
+  title: 'Cabinet Projects'
+  route_name: entity.cabinetry_cabinet_project.collection
+  description: 'Cabinet Projects'
+  weight: 10

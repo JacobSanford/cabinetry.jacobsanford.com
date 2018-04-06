@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Solid Stock'
+vid: cabinetry_solid_stock
+description: 'Solid Stock'
+hierarchy: 0
+weight: 0

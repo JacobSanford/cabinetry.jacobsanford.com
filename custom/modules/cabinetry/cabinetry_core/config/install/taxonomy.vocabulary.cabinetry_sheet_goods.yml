@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sheet Goods'
+vid: cabinetry_sheet_goods
+description: 'Sheet Goods'
+hierarchy: 0
+weight: 0

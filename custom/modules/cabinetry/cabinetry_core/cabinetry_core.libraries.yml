@@ -1,0 +1,4 @@
+ui-dialog-cancel-bind:
+  version: "1.0.x"
+  js:
+    js/ui_dialog_cancel_bind.js: {}

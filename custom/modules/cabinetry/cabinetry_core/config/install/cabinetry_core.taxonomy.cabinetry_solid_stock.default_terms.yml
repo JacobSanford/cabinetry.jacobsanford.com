@@ -1,0 +1,8 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Poplar D4S'
+    boardfoot_cost: !!float 4
+    stock_length: 2438.4

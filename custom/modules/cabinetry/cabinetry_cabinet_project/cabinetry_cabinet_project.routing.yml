@@ -1,0 +1,96 @@
+
+cabinetry_cabinet_project.delete_project_module:
+  path: '/node/{node}/cabinet_modules/{delta}/{cabinetry_cabinet_module}/delete'
+  defaults:
+    _entity_form: cabinetry_cabinet_module.delete
+    _title: 'Delete Cabinet Module'
+  requirements:
+    _permission: 'administer cabinet project'
+
+cabinetry_cabinet_project.edit_project_module:
+  path: '/node/{node}/cabinet_modules/{delta}/{cabinetry_cabinet_module}/edit'
+  defaults:
+    _entity_form: cabinetry_cabinet_module.edit
+    _title: 'Edit Cabinet Module'
+  requirements:
+    _permission: 'administer cabinet project'
+
+cabinetry_cabinet_project.add_project_module:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}/module/add'
+  defaults:
+    _entity_form: cabinetry_cabinet_module.add
+    _title: 'Add Cabinet Module'
+  requirements:
+    _permission: 'administer cabinet project'
+
+entity.cabinetry_cabinet_project.collection:
+  path: '/cabinetry/cabinet_project/list'
+  defaults:
+    _entity_list: 'cabinetry_cabinet_project'
+    _title: 'Cabinet Projects'
+  requirements:
+    _permission: 'view cabinet project'
+
+entity.cabinetry_cabinet_project.canonical:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}'
+  defaults:
+    _entity_view: 'cabinetry_cabinet_project'
+    _title_callback: '\Drupal\cabinetry_cabinet_project\Entity\Controller\CabinetProjectTitleBuilder::getTitle'
+  requirements:
+    _permission: 'view cabinet project'
+
+entity.cabinetry_cabinet_project.add:
+  path: '/cabinetry/cabinet_project/add'
+  defaults:
+    _entity_form: 'cabinetry_cabinet_project.add'
+    _title: 'Project List'
+  requirements:
+    _permission: 'administer cabinet project'
+
+entity.cabinetry_cabinet_project.edit_form:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}/edit'
+  defaults:
+    _entity_form: cabinetry_cabinet_project.edit
+    _title: 'Edit Project'
+  requirements:
+    _permission: 'administer cabinet project'
+
+entity.cabinetry_cabinet_project.delete_form:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}/delete'
+  defaults:
+    _entity_form: cabinetry_cabinet_project.delete
+    _title: 'Delete Project'
+  requirements:
+    _permission: 'administer cabinet project'
+
+cabinetry_cabinet_project.manage_modules:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}/modules'
+  defaults:
+    _entity_list: 'cabinetry_cabinet_module'
+    _title_callback: '\Drupal\cabinetry_cabinet_project\Entity\Controller\CabinetModuleTitleBuilder::getTitle'
+  requirements:
+    _permission: 'administer cabinet project'
+
+entity.cabinetry_cabinet_module.edit_form:
+  path: '/cabinetry/cabinet_module/{cabinetry_cabinet_module}/edit'
+  defaults:
+    _entity_form: cabinetry_cabinet_module.edit
+    _title: 'Edit Module'
+  requirements:
+    _permission: 'administer cabinet project'
+
+entity.cabinetry_cabinet_module.delete_form:
+  path: '/cabinetry/cabinet_module/{cabinetry_cabinet_module}/delete'
+  defaults:
+    _entity_form: cabinetry_cabinet_module.delete
+    _title: 'Delete Module'
+  requirements:
+    _permission: 'administer cabinet project'
+
+cabinetry_cabinet_project.download_plans:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}/plans'
+  defaults:
+    _controller: '\Drupal\cabinetry_cabinet_project\Controller\CabinetProjectPlans::serveFile'
+    _title: 'Download Plans'
+  requirements:
+    _permission: 'administer cabinet project'

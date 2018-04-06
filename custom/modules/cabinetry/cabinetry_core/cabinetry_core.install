@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for cabinetry_core.
+ */
+
+use Drupal\cabinetry_core\TaxonomyHelper;
+
+/**
+ * Implements hook_install().
+ */
+function cabinetry_core_install() {
+  module_set_weight('cabinetry_core', 100);
+  TaxonomyHelper::addDefaultSawBladeTerms();
+  TaxonomyHelper::addDefaultSheetGoodTerms();
+  TaxonomyHelper::addDefaultRailStileBigTerms();
+  TaxonomyHelper::addDefaultSolidStockTerms();
+  TaxonomyHelper::addDefaultHingeTerms();
+  TaxonomyHelper::addDefaultHingePlateTerms();
+}

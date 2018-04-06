@@ -1,0 +1,11 @@
+view cabinet project:
+  title: 'View Cabinet Project'
+add cabinet project:
+  title: 'Add Cabinet Project'
+edit cabinet project:
+  title: 'Edit Cabinet Project'
+delete cabinet project:
+  title: 'Delete Cabinet Project'
+administer cabinet project:
+  title: 'Administer Cabinet Project'
+  restrict access: TRUE

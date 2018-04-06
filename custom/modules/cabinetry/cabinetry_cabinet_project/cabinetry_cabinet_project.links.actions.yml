@@ -1,0 +1,6 @@
+cabinetry_cabinet_project.cabinetry_cabinet_project_add:
+  route_name: entity.cabinetry_cabinet_project.add
+  title: 'Add Cabinet Project'
+  appears_on:
+    - entity.cabinetry_cabinet_project.collection
+    - entity.cabinetry_cabinet_project.canonical

@@ -1,0 +1,5 @@
+cabinet-project-display:
+  version: "1.0.x"
+  css:
+    theme:
+      css/cabinet_project_display.css: {}

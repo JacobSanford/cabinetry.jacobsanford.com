@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Contains cabinetry_core.module.
+ */
+
+use Drupal\cabinetry_cabinet_project\Entity\CabinetProjectEntityViewBuilder;
+
+/**
+ * @defgroup cabinetry_cabinet_project Cabinetry Cabinet Projects
+ * @{
+ * Features relating to cabinetry cabinet projects.
+ *
+ * @ingroup cabinetry
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function cabinetry_cabinet_project_theme($existing, $type, $theme, $path) {
+  return [
+    'cabinetry_cabinet_project' => [
+      'variables' => [
+        'cabinetry_cabinet_project' => NULL,
+      ],
+      'template' => 'cabinetry-cabinet-project',
+      'path' => drupal_get_path('module', 'cabinetry_cabinet_project') . '/templates',
+    ],
+  ];
+}
+
+/**
+ * Build a list of cabinet types and classes for the type selector on forms.
+ *
+ * @param int $nid
+ *   The node id of the cabinetry projects.
+ *
+ * @return array
+ *   A list of classes and labels of cabinet types.
+ */
+function _cabinetry_cabinet_project_project_cabinet_types($nid) {
+  $data = [
+    'types' => [
+      'Drupal\cabinetry_cabinet_project\Cabinetry\Modules\BasicEuroCabinetModule' => 'Basic European Cabinet',
+    ],
+    'nid' => $nid,
+  ];
+  \Drupal::moduleHandler()->alter('cabinet_project_cabinet_types', $data);
+  return $data['types'];
+}
+
+function cabinetry_cabinet_project_preprocess_cabinetry_cabinet_project(&$variables, $hook) {
+  $variables = CabinetProjectEntityViewBuilder::setTemplateVariables($variables, $hook);
+}

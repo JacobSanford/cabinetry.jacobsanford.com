@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Rail/Stile Router Bits'
+vid: cabinetry_rail_stile_router_bits
+description: 'Rail/Stile Router Bits used for panels/doors.'
+hierarchy: 0
+weight: 0

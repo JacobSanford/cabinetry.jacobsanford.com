@@ -1,0 +1,7 @@
+dockworker:
+  version: 1.0
+  instance:
+    project_prefix: CABINET
+    name: cabinetry.jacobsanford.com
+    upstream_image: unblibraries/drupal:alpine-nginx-php7-8.x-composer
+  options:

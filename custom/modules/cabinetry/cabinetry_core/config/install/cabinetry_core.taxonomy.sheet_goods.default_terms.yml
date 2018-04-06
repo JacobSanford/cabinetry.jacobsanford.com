@@ -1,0 +1,32 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: '5/8" (16.8mm) Full Sheet White MOP Melamine'
+    sheet_depth: 16.8
+    sheet_width: !!float 2465
+    sheet_height: !!float 1245
+    sheet_has_grain: 0
+    sheet_cost: !!float 34
+  -
+    name: '1/4" (6mm) FibreLex White One Side'
+    sheet_depth: !!float 6
+    sheet_width: !!float 2440
+    sheet_height: !!float 1220
+    sheet_has_grain: 0
+    sheet_cost: !!float 27
+  -
+    name: '3/4" (19.3mm) MDF Ranger Board'
+    sheet_depth: 19.3
+    sheet_width: !!float 2465
+    sheet_height: !!float 1245
+    sheet_has_grain: 0
+    sheet_cost: !!float 44
+  -
+    name: '1/4" (6mm) Birch OSB Core G2S'
+    sheet_depth: !!float 6
+    sheet_width: !!float 2447
+    sheet_height: !!float 1230
+    sheet_has_grain: 1
+    sheet_cost: !!float 64

@@ -1,0 +1,12 @@
+name: 'Cabinetry Core'
+description: 'Core features used by all cabinetry modules'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x-1.0-alpha1
+package: Cabinetry

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains cabinetry_core.module.
+ */
+
+use Drupal\cabinetry_core\Entity\CabinetryProjectEntityViewBuilder;
+
+/**
+ * @defgroup cabinetry Cabinetry
+ * @{
+ * Features relating to cabinetry projects.
+ */
+
+/**
+ * Build a list of sheet packing algorithms and classes for the type selector.
+ *
+ * @return array
+ *   An associative array containing a list of classes and labels as keys and
+ *   values of sheet packing algorithms.
+ */
+function _cabinetry_core_sheet_packer_types() {
+  $data = [
+    'types' => [
+      'Drupal\cabinetry_core\Cabinetry\Packer\ShelfFFPacker' => 'SHELF-FF',
+    ],
+  ];
+  \Drupal::moduleHandler()->alter('cabinetry_sheet_packer', $data);
+  return $data['types'];
+}
+
+function cabinetry_core_preprocess_cabinetry_project(&$variables, $hook) {
+  $variables = CabinetryProjectEntityViewBuilder::setTemplateVariables($variables, $hook);
+}

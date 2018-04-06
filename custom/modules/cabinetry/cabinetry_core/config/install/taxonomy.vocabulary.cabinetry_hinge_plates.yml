@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Hinge Plates'
+vid: cabinetry_hinge_plates
+description: 'Hinge Plates'
+hierarchy: 0
+weight: 0

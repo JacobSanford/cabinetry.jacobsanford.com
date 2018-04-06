@@ -1,0 +1,18 @@
+name: 'Cabinetry Wainscoting Project'
+description: 'Wainscoting Project'
+type: module
+core: 8.x
+dependencies:
+  - cabinetry_cabinet_project
+  - cabinetry_core
+  - field
+  - image
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0
+package: Cabinetry

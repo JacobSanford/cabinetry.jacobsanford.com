@@ -1,0 +1,7 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Blum Mounting Plate'
+    cost: 0.9
