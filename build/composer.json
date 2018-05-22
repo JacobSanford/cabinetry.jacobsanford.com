@@ -71,7 +71,6 @@
         "drupal/core": "8.4.4",
         "drupal/features": "3.4",
         "itbz/fpdf": "^1.7.3",
-        "drupal/redis": "1.0-rc2",
         "drush/drush": "^8.1.15",
         "webflo/drupal-finder": "^0.3.0",
         "webmozart/path-util": "^2.3"
