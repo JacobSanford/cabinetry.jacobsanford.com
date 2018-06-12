@@ -18,11 +18,17 @@ class CabinetModuleForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $cabinetry_cabinet_project = NULL) {
-    /* @var $entity \Drupal\cabinetry_cabinet_project\Entity\CabinetModule */
-    $this->projectEid = $cabinetry_cabinet_project;
-
     $form = parent::buildForm($form, $form_state);
     $entity = $this->entity;
+    /* @var $entity \Drupal\cabinetry_cabinet_project\Entity\CabinetModule */
+
+    if ($cabinetry_cabinet_project == NULL) {
+      // This has been likely called from Entity Operations field in table.
+      $this->projectEid = $entity->getParentProject()->id();
+    }
+    else {
+      $this->projectEid = $cabinetry_cabinet_project;
+    }
 
     $form['class'] = [
       '#type' => 'select',
@@ -43,14 +49,6 @@ class CabinetModuleForm extends ContentEntityForm {
     $entity = $this->getEntity();
     /* @var $entity \Drupal\cabinetry_cabinet_project\Entity\CabinetModule */
 
-    if ($this->projectEid == NULL) {
-      // This has been called from Entity Operations field in table.
-      $project_eid = $entity->getParentProject()->id();
-    }
-    else {
-      $project_eid = $this->projectEid;
-    }
-
     // Set customized elements not directly in form.
     $entity->setClassLabel($form['class']['#options'][$form_state->getValue('class')]);
     $entity->setClass($form_state->getValue('class'));
@@ -60,7 +58,7 @@ class CabinetModuleForm extends ContentEntityForm {
     // Add module to entity reference.
     $project = \Drupal::entityTypeManager()
       ->getStorage('cabinetry_cabinet_project')
-      ->load($project_eid);
+      ->load($this->projectEid);
     /* @var $project \Drupal\cabinetry_cabinet_project\CabinetProjectInterface */
 
     $new_item = TRUE;
@@ -82,7 +80,7 @@ class CabinetModuleForm extends ContentEntityForm {
     $form_state->setRedirect(
       'cabinetry_cabinet_project.manage_modules',
       [
-        'cabinetry_cabinet_project' => $project_eid,
+        'cabinetry_cabinet_project' => $this->projectEid,
       ]
     );
   }
