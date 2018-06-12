@@ -5,8 +5,6 @@ namespace Drupal\cabinetry_cabinet_project\Entity\Controller;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
 use Drupal\Core\Url;
-use Drupal\Core\Entity\ContainerInterface;
-use Drupal\cabinetry_cabinet_project\CabinetModuleListBuilderInterface;
 
 /**
  * Provides a list controller for CabinetModule entity.
@@ -43,6 +41,20 @@ class CabinetModuleListBuilder extends EntityListBuilder {
   /**
    * {@inheritdoc}
    */
+  public function load() {
+    $project = \Drupal::routeMatch()->getParameters()->get('cabinetry_cabinet_project');
+
+    // Get IDs from project.
+    $project = \Drupal::entityTypeManager()
+      ->getStorage('cabinetry_cabinet_project')
+      ->load($project);
+
+    return $project->getCabinetModules();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function buildHeader() {
     $header['id'] = $this->t('ID');
     $header['name'] = $this->t('Name');
@@ -57,25 +69,12 @@ class CabinetModuleListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\cabinetry_cabinet_project\CabinetModuleInterface */
-
-    $project_eid = \Drupal::routeMatch()->getParameters()->get('cabinetry_cabinet_project');
-
-    // Add module to entity reference.
-    $project = \Drupal::entityTypeManager()
-      ->getStorage('cabinetry_cabinet_project')
-      ->load($project_eid);
-    /* @var $project \Drupal\cabinetry_cabinet_project\CabinetProjectInterface */
-
-    if ($project->hasCabinetModule($entity)) {
-      /* @var $entity \Drupal\cabinetry_cabinet_project\Entity\CabinetModule */
-      $row['id'] = $entity->id();
-      $row['name'] = $entity->getName();
-      $row['height'] = $entity->getHeight() . ' mm';
-      $row['width'] = $entity->getWidth() . ' mm';
-      $row['type'] = $entity->getClassLabel();
-      return $row + parent::buildRow($entity);
-    }
-    return FALSE;
+    $row['id'] = $entity->id();
+    $row['name'] = $entity->getName();
+    $row['height'] = $entity->getHeight() . ' mm';
+    $row['width'] = $entity->getWidth() . ' mm';
+    $row['type'] = $entity->getClassLabel();
+    return $row + parent::buildRow($entity);
   }
 
 }
