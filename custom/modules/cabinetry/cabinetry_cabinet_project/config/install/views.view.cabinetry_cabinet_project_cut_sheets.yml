@@ -76,13 +76,13 @@ display:
       style:
         type: table
       row:
-        type: fields
+        type: 'entity:cabinetry_cabinet_project'
       fields:
         name:
           id: name
           table: cabinetry_cut_sheet
           field: name
-          relationship: cut_sheets
+          relationship: cut_sheets_target_id
           group_type: group
           admin_label: ''
           label: Material
@@ -143,11 +143,11 @@ display:
           entity_type: cabinetry_cut_sheet
           entity_field: name
           plugin_id: field
-        cut_sheet_images__target_id:
-          id: cut_sheet_images__target_id
+        cut_sheet_images_target_id:
+          id: cut_sheet_images_target_id
           table: cabinetry_cut_sheet__cut_sheet_images
-          field: cut_sheet_images__target_id
-          relationship: cut_sheets
+          field: cut_sheet_images_target_id
+          relationship: cut_sheets_target_id
           group_type: group
           admin_label: ''
           label: 'Cut Sheet Images'
@@ -256,10 +256,10 @@ display:
       footer: {  }
       empty: {  }
       relationships:
-        cut_sheets:
-          id: cut_sheets
+        cut_sheets_target_id:
+          id: cut_sheets_target_id
           table: cabinetry_cabinet_project__cut_sheets
-          field: cut_sheets
+          field: cut_sheets_target_id
           relationship: none
           group_type: group
           admin_label: 'Material Cut Sheet'
@@ -271,7 +271,7 @@ display:
           id: material
           table: cabinetry_cut_sheet
           field: material
-          relationship: cut_sheets
+          relationship: cut_sheets_target_id
           group_type: group
           admin_label: 'Taxonomy term'
           required: false
