@@ -117,7 +117,7 @@ class CabinetDoor extends CabinetComponent {
   protected function generateStilePart($label) {
     $this->parts[] = CabinetryPart::createPart(
       t(
-        '@label [@height] @direction Stile',
+        '@label @direction Stile',
         [
           '@direction' => $label,
           '@height' => $this->doorFrameHeight,
@@ -141,7 +141,7 @@ class CabinetDoor extends CabinetComponent {
   protected function generateRailPart($label) {
     $this->parts[] = CabinetryPart::createPart(
       t(
-        '@label [@height] @direction Rail',
+        '@label @direction Rail',
         [
           '@direction' => $label,
           '@height' => $this->doorFrameHeight,
