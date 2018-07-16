@@ -113,7 +113,7 @@ class CabinetModule extends PhysicalObject implements CabinetModuleInterface {
         [
           'default_value' => 0,
           'min' => 0,
-          'max' => 10,
+          'max' => 5,
           'step' => 1,
         ]
       )
