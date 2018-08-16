@@ -460,16 +460,19 @@ class BasicEuroCabinetModule extends CabinetComponent {
    */
   protected function generateDoorParts() {
     $this->doors = [];
+    $num_doors = $this->doorsAcrossGap;
+
     $num_divisions = count($this->divisions);
     foreach ($this->divisions as $division_index => $division_ratio) {
       for ($door_counter = 0; $door_counter < $this->doorsAcrossGap; $door_counter++) {
         $door = new CabinetDoor(
           t(
-            '[@module_name] Division @division_id Door @door_counter',
+            '[@module_name] Div#@division_id Door @door_counter/@doors_total',
             [
               '@module_name' => $this->module->getName(),
               '@division_id' => $division_index + 1,
-              '@door_counter' => $door_counter,
+              '@door_counter' => $door_counter + 1,
+              '@doors_total' => $num_doors,
             ]
           ),
           ($this->width - ((1 + $this->doorsAcrossGap) * $this->doorReveal)) / $this->doorsAcrossGap,
