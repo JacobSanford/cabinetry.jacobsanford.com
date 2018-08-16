@@ -94,3 +94,11 @@ cabinetry_cabinet_project.download_plans:
     _title: 'Download Plans'
   requirements:
     _permission: 'administer cabinet project'
+
+cabinetry_cabinet_project.download_labels:
+  path: '/cabinetry/cabinet_project/{cabinetry_cabinet_project}/labels'
+  defaults:
+    _controller: '\Drupal\cabinetry_cabinet_project\Controller\CabinetProjectLabels::serveFile'
+    _title: 'Download Labels'
+  requirements:
+    _permission: 'administer cabinet project'

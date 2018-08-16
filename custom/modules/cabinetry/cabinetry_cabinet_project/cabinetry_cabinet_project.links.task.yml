@@ -22,6 +22,12 @@ cabinetry_cabinet_project.download_plans:
   base_route: entity.cabinetry_cabinet_project.canonical
   weight: 100
 
+cabinetry_cabinet_project.download_labels:
+  title: 'Download Labels'
+  route_name: cabinetry_cabinet_project.download_labels
+  base_route: entity.cabinetry_cabinet_project.canonical
+  weight: 100
+
 cabinetry_cabinet_project.page_edit:
   route_name: entity.cabinetry_cabinet_project.edit_form
   base_route: entity.cabinetry_cabinet_project.canonical
