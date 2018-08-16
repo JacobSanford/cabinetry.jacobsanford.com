@@ -347,7 +347,7 @@ class BasicEuroCabinetModule extends CabinetComponent {
       $this->height,
       $this->depth,
       $this->carcassStock,
-      "Cut {$this->carcassBackStock->getDepth()}mm wide, {$dado_depth}mm deep dado {$sheet_depth}mm inset from one long edge of sheet."
+      "{$this->carcassBackStock->getDepth()}mm w|{$dado_depth}mm d dado {$sheet_depth}mm inset from long edge"
     );
     $this->addBanding($this->carcassStock->getMaterial(), $this->height);
   }
@@ -375,7 +375,7 @@ class BasicEuroCabinetModule extends CabinetComponent {
       $this->carcassInnerWidth,
       $this->depth,
       $this->carcassStock,
-      "Cut {$this->carcassBackStock->getDepth()}mm wide, {$dado_depth}mm deep dado {$sheet_depth}mm inset from one long edge of sheet."
+      "{$this->carcassBackStock->getDepth()}mm w|{$dado_depth}mm d dado {$sheet_depth}mm inset from long edge"
     );
     $this->addBanding($this->carcassStock->getMaterial(), $this->carcassInnerWidth);
   }
@@ -450,7 +450,7 @@ class BasicEuroCabinetModule extends CabinetComponent {
         $this->carcassInnerWidth,
         CabinetProject::CABINET_PROJECT_CABINET_NAILER_HEIGHT,
         $this->carcassStock,
-        ''
+        'Two pocket holes on each end'
       );
     }
   }
