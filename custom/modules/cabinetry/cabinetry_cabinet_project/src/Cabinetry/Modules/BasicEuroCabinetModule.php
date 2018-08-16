@@ -487,7 +487,10 @@ class BasicEuroCabinetModule extends CabinetComponent {
         $this->doors[] = $door;
 
         // Hardware.
-        $this->addParts($door->parts);
+        if (!$this->project->getPurchaseDoors()) {
+          $this->addParts($door->parts);
+        }
+
         $this->hardware[] = $this->doorHinge;
         $this->hardware[] = $this->doorHinge;
         $this->hardware[] = $this->doorHingePlate;

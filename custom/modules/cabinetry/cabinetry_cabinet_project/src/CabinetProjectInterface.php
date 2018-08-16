@@ -380,12 +380,12 @@ interface CabinetProjectInterface extends CabinetryProjectInterface {
   /**
    * Remove a cabinet module from this project.
    *
-   * @param \Drupal\cabinetry_cabinet_project\CabinetModuleInterface[ $module
+   * @param \Drupal\cabinetry_cabinet_project\CabinetModuleInterface $module
    *   The CabinetModuleInterface module to remove.
    *
    * @return $this
    */
-  public function removeCabinetModule($module);
+  public function removeCabinetModule(CabinetModuleInterface $module);
 
   /**
    * Gets the entity IDs of the cabinet modules associated with this project.
@@ -440,5 +440,31 @@ interface CabinetProjectInterface extends CabinetryProjectInterface {
    * Pack sheets from parts for the project.
    */
   public function batchPackSheets();
+
+  /**
+   * Gets if the project should be built with purchased doors.
+   *
+   * @return bool
+   *   TRUE if the project should be built with purchased doors.
+   */
+  public function getPurchaseDoors();
+
+  /**
+   * Sets if the project should be audited under the 32mm system.
+   *
+   * @param bool $purchase_doors
+   *   TRUE if the project be built with purchased doors.
+   *
+   * @return $this
+   */
+  public function setPurchaseDoors($purchase_doors);
+
+  /**
+   * Gets the doors needed to build the modules in this project.
+   *
+   * @return array
+   *   An associative array of doors.
+   */
+  public function getDoors();
 
 }

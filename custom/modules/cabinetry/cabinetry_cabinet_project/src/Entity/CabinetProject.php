@@ -16,6 +16,7 @@ use Drupal\Core\File\FileSystem;
 use Drupal\Core\PhpStorage\PhpStorageFactory;
 use Drupal\file\Entity\File;
 use Drupal\taxonomy\TermInterface;
+use Drupal\cabinetry_cabinet_project\Cabinetry\Modules\BasicEuroCabinetModule;
 
 /**
  * Defines the Cabinet Project entity.
@@ -53,6 +54,22 @@ class CabinetProject extends CabinetryProject implements CabinetProjectInterface
 
   const CABINET_PROJECT_CABINET_NAILER_HEIGHT = 75;
   const CABINET_PROJECT_CABINET_SHELF_UNDERSIZE = 6.0;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getDoors() {
+    $doors = [];
+    $modules = $this->getCabinetModules();
+    foreach ($modules as $index => $target_module) {
+      if ($target_module->getDoorsAcrossGap() > 0) {
+        $module = new BasicEuroCabinetModule($this, $target_module);
+        $module->build();
+        $doors[$target_module->getName()] = $module->doors;
+      }
+    };
+    return $doors;
+  }
 
   /**
    * {@inheritdoc}
@@ -518,6 +535,24 @@ class CabinetProject extends CabinetryProject implements CabinetProjectInterface
         ]
       );
 
+    // Purchase doors.
+    $fields['purchase_doors'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Purchase Doors'))
+      ->setDescription(t('Purchase doors from a manufacturer, omitting them from cut lists.'))
+      ->setDisplayOptions(
+        'form',
+        [
+          'type' => 'boolean_checkbox',
+          'weight' => 0,
+          'settings' => [
+            'default_value' => 0,
+            'display_label' => TRUE,
+          ],
+        ]
+      )
+      ->setDefaultValue(TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
     return $fields;
   }
 
@@ -721,6 +756,21 @@ class CabinetProject extends CabinetryProject implements CabinetProjectInterface
    */
   public function setIsThirtyTwoSystem($is_thirty_two) {
     $this->set('counter_top', $is_thirty_two);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getPurchaseDoors() {
+    return (bool) $this->get('purchase_doors')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setPurchaseDoors($purchase_doors) {
+    $this->set('purchase_doors', $purchase_doors);
     return $this;
   }
 
