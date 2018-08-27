@@ -43,6 +43,7 @@ function _cabinetry_cabinet_project_project_cabinet_types($nid) {
   $data = [
     'types' => [
       'Drupal\cabinetry_cabinet_project\Cabinetry\Modules\BasicEuroCabinetModule' => 'Basic European Cabinet',
+      'Drupal\cabinetry_cabinet_project\Cabinetry\Modules\EuroDrawerCabinetModule' => 'European Cabinet With Drawer',
     ],
     'nid' => $nid,
   ];

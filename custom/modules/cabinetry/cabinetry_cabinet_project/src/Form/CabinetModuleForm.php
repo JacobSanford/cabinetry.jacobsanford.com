@@ -44,6 +44,15 @@ class CabinetModuleForm extends ContentEntityForm {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    parent::validateForm($form, $form_state);
+    // Validate size for sheets
+    // If drawers, validate standard slides
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function save(array $form, FormStateInterface $form_state) {
     // Set custom entity properties.
     $entity = $this->getEntity();

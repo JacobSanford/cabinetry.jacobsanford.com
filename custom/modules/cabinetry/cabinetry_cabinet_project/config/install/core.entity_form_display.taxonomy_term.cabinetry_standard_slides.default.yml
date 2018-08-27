@@ -1,0 +1,116 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_min_cab_dept
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_cd_pro_l
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_ext_loss
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_hol_hab
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_hol_ins
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_length
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_sug_dlen
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_tot_wc
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_vert_bc
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_vert_tc
+    - taxonomy.vocabulary.cabinetry_standard_slides
+  module:
+    - path
+    - text
+id: taxonomy_term.cabinetry_standard_slides.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_standard_slides
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cabinetry_std_min_cab_dept:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_cd_pro_l:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_ext_loss:
+    weight: 34
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_hol_hab:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_hol_ins:
+    weight: 40
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_length:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_sug_dlen:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_tot_wc:
+    weight: 39
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_vert_bc:
+    weight: 37
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_std_sld_vert_tc:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,112 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Blum 230M6500'
+    length: 660.4
+    min_depth: 653.0
+    sug_dr_depth: 650.0
+    ext_loss: 127.0
+    cabdr_prof_len: 650.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M6000'
+    length: 609.6
+    min_depth: 603.0
+    sug_dr_depth: 600.0
+    ext_loss: 120.0
+    cabdr_prof_len: 600.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M5500'
+    length: 558.8
+    min_depth: 553.0
+    sug_dr_depth: 550.0
+    ext_loss: 110.0
+    cabdr_prof_len: 550.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M5000'
+    length: 508.0
+    min_depth: 503.0
+    sug_dr_depth: 500.0
+    ext_loss: 102.0
+    cabdr_prof_len: 500.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M4500'
+    length: 457.2
+    min_depth: 453.0
+    sug_dr_depth: 450.0
+    ext_loss: 95.0
+    cabdr_prof_len: 450.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M4000'
+    length: 406.4
+    min_depth: 403.0
+    sug_dr_depth: 400.0
+    ext_loss: 85.0
+    cabdr_prof_len: 400.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M3500'
+    length: 355.6
+    min_depth: 353.0
+    sug_dr_depth: 350.0
+    ext_loss: 85.0
+    cabdr_prof_len: 350.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M3000'
+    length: 304.8
+    min_depth: 303.0
+    sug_dr_depth: 300.0
+    ext_loss: 85.0
+    cabdr_prof_len: 300.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0
+  -
+    name: 'Blum 230M2500'
+    length: 254.0
+    min_depth: 253.0
+    sug_dr_depth: 250.0
+    ext_loss: 59.0
+    cabdr_prof_len: 250.0
+    hol_height_above_spacer: 18.0
+    hol_horiz_inset: 37.0
+    vert_bot_clearance: 4.0
+    vert_top_clearance: 15.0
+    tot_width_clearance: 25.0

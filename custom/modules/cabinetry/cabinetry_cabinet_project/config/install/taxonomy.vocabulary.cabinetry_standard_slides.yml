@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Standard Drawer Slides'
+vid: cabinetry_standard_slides
+description: 'Slides in Blum 230M Series'
+hierarchy: 0
+weight: 0

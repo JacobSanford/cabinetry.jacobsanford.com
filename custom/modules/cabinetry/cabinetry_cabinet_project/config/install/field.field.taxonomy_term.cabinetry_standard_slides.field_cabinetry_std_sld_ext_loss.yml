@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_std_sld_ext_loss
+    - taxonomy.vocabulary.cabinetry_standard_slides
+id: taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_ext_loss
+field_name: field_cabinetry_std_sld_ext_loss
+entity_type: taxonomy_term
+bundle: cabinetry_standard_slides
+label: 'Extension Loss'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal
