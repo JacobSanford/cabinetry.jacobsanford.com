@@ -44,15 +44,6 @@ class CabinetModuleForm extends ContentEntityForm {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-    // Validate size for sheets
-    // If drawers, validate standard slides
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function save(array $form, FormStateInterface $form_state) {
     // Set custom entity properties.
     $entity = $this->getEntity();
@@ -92,6 +83,115 @@ class CabinetModuleForm extends ContentEntityForm {
         'cabinetry_cabinet_project' => $this->projectEid,
       ]
     );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    parent::validateForm($form, $form_state);
+    $this->validateSheetSizes($form, $form_state);
+    $this->validateSizeForDrawers($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  private function validateSheetSizes(array $form, FormStateInterface $form_state) {
+    $module = $this->buildEntity($form, $form_state);
+    /** @var \Drupal\cabinetry_cabinet_project\Entity\CabinetModule $module */
+
+    // Add module to entity reference.
+    $project = \Drupal::entityTypeManager()
+      ->getStorage('cabinetry_cabinet_project')
+      ->load($this->projectEid);
+    /* @var $project \Drupal\cabinetry_cabinet_project\CabinetProjectInterface */
+
+    // Validate size for carcass sheets.
+    $carcass_sheet = $project->getCarcassMaterial();
+    if ($carcass_sheet->getPreserveGrain()) {
+      if ($module->getHeight() > $carcass_sheet->getWidth()) {
+        $form_state->setErrorByName('height', t('Module height is larger than sheet goods allow.'));
+      }
+      $width_sheet_needed = $module->getWidth() - (2 * $carcass_sheet->getDepth());
+      if ($width_sheet_needed > $carcass_sheet->getWidth()) {
+        $form_state->setErrorByName('width', t('Module width is larger than sheet goods allow.'));
+      }
+      if ($module->getDepth() > $carcass_sheet->getHeight()) {
+        $form_state->setErrorByName('depth', t('Module depth is larger than sheet goods allow.'));
+      }
+    }
+    else {
+      if ($module->getHeight() > $carcass_sheet->getWidth() && $module->getDepth() > $carcass_sheet->getWidth()) {
+        $form_state->setErrorByName('height', t('Module height is larger than sheet goods allow.'));
+      }
+      $width_sheet_needed = $module->getWidth() - (2 * $carcass_sheet->getDepth());
+      if ($width_sheet_needed > $carcass_sheet->getWidth() && $module->getDepth() > $carcass_sheet->getWidth()) {
+        $form_state->setErrorByName('width', t('Module width is larger than sheet goods allow.'));
+      }
+      if ($module->getDepth() > $carcass_sheet->getHeight()) {
+        $form_state->setErrorByName('depth', t('Module depth is larger than sheet goods allow.'));
+      }
+    }
+
+    // Validate size for back sheets.
+    $carcass_back = $project->getCarcassBackMaterial();
+    $sheet_depth = $carcass_sheet->getDepth();
+    $dado_depth = $sheet_depth / 2;
+    $carcass_back_width = $module->getWidth() - (2 * $carcass_sheet->getDepth()) + (2 * $dado_depth);
+    $carcass_back_height = $module->getHeight() - (2 * $carcass_sheet->getDepth()) + (2 * $dado_depth);
+
+    if ($carcass_back->getPreserveGrain()) {
+      if ($carcass_back_height > $carcass_sheet->getWidth()) {
+        $form_state->setErrorByName('height', t('Module height is larger than sheet goods allow.'));
+      }
+      if ($carcass_back_width > $carcass_sheet->getHeight()) {
+        $form_state->setErrorByName('width', t('Module width is larger than sheet goods allow.'));
+      }
+    }
+    else {
+      if ($carcass_back_height > $carcass_sheet->getWidth() && $carcass_back_height > $carcass_sheet->getHeight()) {
+        $form_state->setErrorByName('height', t('Module height is larger than sheet goods allow.'));
+      }
+      if ($carcass_back_width > $carcass_sheet->getWidth() && $carcass_back_width > $carcass_sheet->getHeight()) {
+        $form_state->setErrorByName('width', t('Module width is larger than sheet goods allow.'));
+      }
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  private function validateSizeForDrawers(array $form, FormStateInterface $form_state) {
+    $module = $this->buildEntity($form, $form_state);
+    /** @var \Drupal\cabinetry_cabinet_project\Entity\CabinetModule $module */
+
+    // Add module to entity reference.
+    $project = \Drupal::entityTypeManager()
+      ->getStorage('cabinetry_cabinet_project')
+      ->load($this->projectEid);
+    /* @var $project \Drupal\cabinetry_cabinet_project\CabinetProjectInterface */
+
+    $classes_with_drawers = [
+      'Drupal\cabinetry_cabinet_project\Cabinetry\Modules\EuroDrawerCabinetModule',
+    ];
+
+    if (in_array($module->getClass(), $classes_with_drawers)) {
+      $maximum_drawer_length = $module->getDepth()
+        - $project->getCarcassMaterial()->getDepth()
+        - $project->getCarcassbackMaterial()->getDepth();
+
+      $query = \Drupal::entityQuery('taxonomy_term')
+        ->condition('vid', 'cabinetry_standard_slides')
+        ->condition('field_cabinetry_std_min_cab_dept', $maximum_drawer_length, '<=')
+        ->sort('field_cabinetry_std_min_cab_dept', 'DESC')
+        ->range(0, 1);
+      $tids = $query->execute();
+
+      if (empty($tids)) {
+        $form_state->setErrorByName('depth', t('Module depth is too small for standard drawer slides.'));
+      }
+    }
   }
 
 }
