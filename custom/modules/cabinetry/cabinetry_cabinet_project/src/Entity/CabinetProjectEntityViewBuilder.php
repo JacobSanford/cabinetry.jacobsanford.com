@@ -30,7 +30,7 @@ class CabinetProjectEntityViewBuilder extends CabinetryProjectEntityViewBuilder 
       foreach ($doors as $module_label => $door_list) {
         foreach ($door_list as $door_id => $cur_door) {
           $door_table_data[] = [
-            "$module_label Door $door_id",
+            "$cur_door->label",
             $cur_door->width . 'mm',
             $cur_door->height . 'mm',
           ];

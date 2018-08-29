@@ -350,6 +350,7 @@ class BasicEuroCabinetModule extends CabinetComponent {
       "{$this->carcassBackStock->getDepth()}mm w|{$dado_depth}mm d dado {$sheet_depth}mm inset from long edge"
     );
     $this->addBanding($this->carcassStock->getMaterial(), $this->height);
+    $this->addBanding($this->carcassStock->getMaterial(), 2 * $this->depth);
   }
 
   /**

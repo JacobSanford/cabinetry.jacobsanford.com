@@ -63,7 +63,8 @@ class CabinetProject extends CabinetryProject implements CabinetProjectInterface
     $modules = $this->getCabinetModules();
     foreach ($modules as $index => $target_module) {
       if ($target_module->getDoorsAcrossGap() > 0) {
-        $module = new BasicEuroCabinetModule($this, $target_module);
+        $module_class = $target_module->getClass();
+        $module = new $module_class($this, $target_module);
         $module->build();
         $doors[$target_module->getName()] = $module->doors;
       }
@@ -125,6 +126,7 @@ class CabinetProject extends CabinetryProject implements CabinetProjectInterface
 
     $class = $module->getClass();
     $component = new $class($project, $module);
+    $component->build();
     $plotter = new CabinetComponentPlotter($component);
 
     $project->addProjectImage(
