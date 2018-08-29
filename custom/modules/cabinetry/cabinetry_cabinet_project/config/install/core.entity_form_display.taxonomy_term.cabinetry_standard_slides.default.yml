@@ -1,7 +1,9 @@
+uuid: 4edcaf0a-f276-48e1-98e6-6b4dcb5f62bc
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_item_cost
     - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_min_cab_dept
     - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_cd_pro_l
     - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_ext_loss
@@ -16,6 +18,8 @@ dependencies:
   module:
     - path
     - text
+_core:
+  default_config_hash: RIC0aMsLoPmr-8wKLdaeslI9cui_zp9kjw9bCZzV8jU
 id: taxonomy_term.cabinetry_standard_slides.default
 targetEntityType: taxonomy_term
 bundle: cabinetry_standard_slides
@@ -29,6 +33,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_cabinetry_item_cost:
+    weight: 41
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_cabinetry_std_min_cab_dept:
     weight: 32
     settings:
