@@ -1,0 +1,32 @@
+{
+    "name": "drupal/cabinetry",
+    "description": "Cabinetry was created with the goal of fast prototype-to-build designs for various forms of cabinetry.",
+    "type": "drupal-module",
+    "homepage": "https://drupal.org/project/cabinetry",
+    "authors": [
+        {
+            "name": "Jacob Sanford (JacobSanford)",
+            "homepage": "https://www.drupal.org/u/jacobsanford",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://drupal.org/project/issues/cabinetry",
+        "irc": "irc://irc.freenode.org/drupal-contribute",
+        "source": "http://cgit.drupalcode.org/cabinetry"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "require": {
+        "cweagans/composer-patches": "~1.0",
+        "itbz/fpdf": "^1.7.3"
+    },
+    "extra": {
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "Multiple entity references fail.": "https://www.drupal.org/files/issues/views_does_not_add_relationship_2795455_13.patch"
+            }
+        }
+    }
+}

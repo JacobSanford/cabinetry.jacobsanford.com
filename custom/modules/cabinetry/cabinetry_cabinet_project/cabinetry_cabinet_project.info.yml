@@ -3,16 +3,16 @@ description: 'Cabinet Project'
 type: module
 core: 8.x
 dependencies:
-  - cabinetry_cabinet_project
-  - cabinetry_core
-  - field
-  - image
-  - menu_ui
-  - node
-  - path
-  - taxonomy
-  - text
-  - user
-  - views
+  - cabinetry:cabinetry_cabinet_project
+  - cabinetry:cabinetry_core
+  - drupal:field
+  - drupal:image
+  - drupal:menu_ui
+  - drupal:node
+  - drupal:path
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:user
+  - drupal:views
 version: 8.x-1.0
 package: Cabinetry
