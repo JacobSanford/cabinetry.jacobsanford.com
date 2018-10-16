@@ -40,11 +40,6 @@
             "themes/contrib/{$name}": [
                 "type:drupal-theme"
             ]
-        },
-        "patches": {
-            "drupal/core": {
-                "Multiple entity references fail.": "https://www.drupal.org/files/issues/views_does_not_add_relationship_2795455_13.patch"
-            }
         }
     },
     "license": "MIT",

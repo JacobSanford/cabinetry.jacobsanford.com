@@ -11,6 +11,15 @@
     "source": "http://cgit.drupalcode.org/cabinetry"
   },
   "require": {
+    "cweagans/composer-patches": "~1.0",
     "itbz/fpdf": "^1.7.3"
   },
+  "extra": {
+    "enable-patching": true,
+    "patches": {
+      "drupal/core": {
+        "Multiple entity references fail.": "https://www.drupal.org/files/issues/views_does_not_add_relationship_2795455_13.patch"
+      }
+    }
+  }
 }
