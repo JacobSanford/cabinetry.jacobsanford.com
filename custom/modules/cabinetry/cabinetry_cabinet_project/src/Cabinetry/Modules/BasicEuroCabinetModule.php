@@ -317,7 +317,10 @@ class BasicEuroCabinetModule extends CabinetComponent {
         ),
         $this->carcassStock->getDepth(),
         $this->carcassInnerWidth - CabinetProject::CABINET_PROJECT_CABINET_SHELF_UNDERSIZE,
-        $this->depth - CabinetProject::CABINET_PROJECT_CABINET_SHELF_UNDERSIZE,
+        $this->depth
+          - $this->carcassStock->getDepth()
+          - $this->carcassBackStock->getDepth()
+          - CabinetProject::CABINET_PROJECT_CABINET_SHELF_UNDERSIZE,
         $this->carcassStock,
         ''
       );
@@ -430,7 +433,22 @@ class BasicEuroCabinetModule extends CabinetComponent {
    */
   protected function generateDividerPanelParts() {
     for ($divider_id = 0; $divider_id < count($this->divisions) - 1; $divider_id++) {
-      $this->generateTopBottomPart("Section $divider_id Divider");
+      $this->parts[] = CabinetryPart::createPart(
+        t(
+          '[@module_name] Section @divider_id Divider',
+          [
+            '@module_name' => $this->module->getName(),
+            '@divider_id' => $divider_id,
+          ]
+        ),
+        $this->carcassStock->getDepth(),
+        $this->carcassInnerWidth,
+        $this->depth
+          - $this->carcassStock->getDepth()
+          - $this->carcassBackStock->getDepth(),
+        $this->carcassStock,
+        ''
+      );
     }
   }
 
