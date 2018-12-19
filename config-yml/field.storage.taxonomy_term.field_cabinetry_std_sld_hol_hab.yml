@@ -1,0 +1,22 @@
+uuid: 6163cbc0-cfe1-465f-a5b8-24849df941d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: TxFDjeaoP2q8O8OzVLbWdvXoKpqtlx1SZSRj1z2GXeg
+id: taxonomy_term.field_cabinetry_std_sld_hol_hab
+field_name: field_cabinetry_std_sld_hol_hab
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

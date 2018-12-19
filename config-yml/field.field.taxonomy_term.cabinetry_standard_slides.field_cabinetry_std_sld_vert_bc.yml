@@ -1,0 +1,25 @@
+uuid: baa82db3-c237-47f6-9b20-99d60426874d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_std_sld_vert_bc
+    - taxonomy.vocabulary.cabinetry_standard_slides
+_core:
+  default_config_hash: Wn_Uhq4pG-If6chgW-I8e_Ifarga6LsEh9TI_Vhhi_Y
+id: taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_vert_bc
+field_name: field_cabinetry_std_sld_vert_bc
+entity_type: taxonomy_term
+bundle: cabinetry_standard_slides
+label: 'Vertical Bottom Clearance'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal

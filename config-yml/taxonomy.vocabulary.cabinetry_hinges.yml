@@ -1,0 +1,11 @@
+uuid: f1812445-1ce1-4e99-b427-1cb9e1970df2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4gbD46TEDoUa2_8v2vnR1FyzbKapBV_FAsinLzXPKnc
+name: Hinges
+vid: cabinetry_hinges
+description: Hinges
+hierarchy: 0
+weight: 0

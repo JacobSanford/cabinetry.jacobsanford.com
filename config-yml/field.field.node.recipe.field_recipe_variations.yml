@@ -1,0 +1,37 @@
+uuid: e9c59373-1c93-448e-974d-60fe5521319a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_variations
+    - node.type.recipe
+    - paragraphs.paragraphs_type.recipe_variation
+  module:
+    - entity_reference_revisions
+id: node.recipe.field_recipe_variations
+field_name: field_recipe_variations
+entity_type: node
+bundle: recipe
+label: Variations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      recipe_variation: recipe_variation
+    target_bundles_drag_drop:
+      recipe_variation:
+        enabled: true
+        weight: 4
+      recipe_ingredient:
+        weight: 5
+        enabled: false
+      recipe_step:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/recipes",
+  "type": "drupal-module",
+  "description": "Recipes",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/recipes",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/recipes",
+    "source": "http://cgit.drupalcode.org/recipes"
+  },
+  "require": { }
+}

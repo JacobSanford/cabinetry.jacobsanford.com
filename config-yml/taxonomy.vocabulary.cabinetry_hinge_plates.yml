@@ -1,0 +1,11 @@
+uuid: 90b9d33b-061d-4f50-b00a-e0f4659b3724
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lt3PjbfIZQh5UUqu0C0EEstsyQ_1PyMRjMKLdmd9558
+name: 'Hinge Plates'
+vid: cabinetry_hinge_plates
+description: 'Hinge Plates'
+hierarchy: 0
+weight: 0

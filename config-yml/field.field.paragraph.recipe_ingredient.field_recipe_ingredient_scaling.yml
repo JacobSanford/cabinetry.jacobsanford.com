@@ -1,0 +1,19 @@
+uuid: cc50e472-b63f-49cf-be9d-9e8e9c928973
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recipe_ingredient_scaling
+    - paragraphs.paragraphs_type.recipe_ingredient
+id: paragraph.recipe_ingredient.field_recipe_ingredient_scaling
+field_name: field_recipe_ingredient_scaling
+entity_type: paragraph
+bundle: recipe_ingredient
+label: Scaling
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

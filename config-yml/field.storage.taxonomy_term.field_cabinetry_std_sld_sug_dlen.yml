@@ -1,0 +1,22 @@
+uuid: 37ceddba-f018-49b4-85d3-e8a15dea67f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: 17WzmInyHDlzUzbcVcIwE_sNQ4858Cv-eh9yZgjr_6w
+id: taxonomy_term.field_cabinetry_std_sld_sug_dlen
+field_name: field_cabinetry_std_sld_sug_dlen
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

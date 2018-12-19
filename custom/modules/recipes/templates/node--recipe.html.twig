@@ -1,0 +1,21 @@
+{{ attach_library('recipes/recipe-style') }}
+
+<div class="recipe-body">
+    <h1 class="recipe-title">{{ label }}</h1>
+    <h2 class="recipe-source">{{ content.field_recipe_original_source }}</h2>
+
+    <dl class="recipe-info">
+        <dt>Yield</dt>
+        <dd>{{ scaling_select }}</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+
+    <div class="recipe-description">
+        {{ content.field_recipe_description }}
+    </div>
+
+    <div class="recipe-steps">
+        {{ step_table }}
+    </div>
+</div>

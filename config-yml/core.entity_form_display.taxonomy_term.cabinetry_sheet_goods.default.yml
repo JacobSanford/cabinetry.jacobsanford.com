@@ -1,0 +1,79 @@
+uuid: 78a5e62b-0d12-427b-b242-34a0e9193fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_sheet_goods.field_cabinetry_depth
+    - field.field.taxonomy_term.cabinetry_sheet_goods.field_cabinetry_height
+    - field.field.taxonomy_term.cabinetry_sheet_goods.field_cabinetry_item_cost
+    - field.field.taxonomy_term.cabinetry_sheet_goods.field_cabinetry_preserve_grain
+    - field.field.taxonomy_term.cabinetry_sheet_goods.field_cabinetry_width
+    - taxonomy.vocabulary.cabinetry_sheet_goods
+  module:
+    - path
+    - text
+_core:
+  default_config_hash: Pu3-t4NGB3ZKrCOUmF5URS-TDtPME22gDd2Pam9dkyo
+id: taxonomy_term.cabinetry_sheet_goods.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_sheet_goods
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_cabinetry_depth:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_height:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_item_cost:
+    weight: 34
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_cabinetry_preserve_grain:
+    weight: 35
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_cabinetry_width:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

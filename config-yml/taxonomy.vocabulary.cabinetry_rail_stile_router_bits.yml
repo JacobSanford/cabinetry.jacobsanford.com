@@ -1,0 +1,11 @@
+uuid: b640fa05-a1f3-410e-b88f-997d4c329b7a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: tinKG93rffVlrG-TFIh5gNSNlfauEjO2GBN4wp1vrpo
+name: 'Rail/Stile Router Bits'
+vid: cabinetry_rail_stile_router_bits
+description: 'Rail/Stile Router Bits used for panels/doors.'
+hierarchy: 0
+weight: 0

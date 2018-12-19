@@ -1,0 +1,7 @@
+name: 'Recipes'
+type: module
+description: 'Recipes'
+core: 8.x
+package: 'Recipes'
+dependencies:
+  - paragraphs

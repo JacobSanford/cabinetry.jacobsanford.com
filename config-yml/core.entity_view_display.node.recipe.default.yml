@@ -1,0 +1,106 @@
+uuid: fc5f4a9b-91b5-4c2b-9cbf-6494bbe28287
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.field_recipe_description
+    - field.field.node.recipe.field_recipe_original_source
+    - field.field.node.recipe.field_recipe_prep_images
+    - field.field.node.recipe.field_recipe_steps
+    - field.field.node.recipe.field_recipe_time_estimate
+    - field.field.node.recipe.field_recipe_title_image
+    - field.field.node.recipe.field_recipe_type
+    - field.field.node.recipe.field_recipe_variations
+    - field.field.node.recipe.field_recipe_yield
+    - node.type.recipe
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+id: node.recipe.default
+targetEntityType: node
+bundle: recipe
+mode: default
+content:
+  field_recipe_description:
+    weight: 103
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_recipe_original_source:
+    weight: 107
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_recipe_prep_images:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_recipe_steps:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_recipe_time_estimate:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_recipe_title_image:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_recipe_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_recipe_variations:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_recipe_yield:
+    weight: 108
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

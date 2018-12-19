@@ -1,0 +1,33 @@
+uuid: 57b33786-48a7-4c03-bd4b-f0fee4117ef9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recipe_step.field_recipe_step_ingredients
+    - field.field.paragraph.recipe_step.field_recipe_step_procedures
+    - paragraphs.paragraphs_type.recipe_step
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.recipe_step.default
+targetEntityType: paragraph
+bundle: recipe_step
+mode: default
+content:
+  field_recipe_step_ingredients:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_recipe_step_procedures:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

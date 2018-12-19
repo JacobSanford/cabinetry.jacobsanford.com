@@ -1,0 +1,9 @@
+uuid: e816fe60-cde8-4024-8a6c-92ed8a9a6de9
+langcode: en
+status: true
+dependencies: {  }
+id: recipe_step
+label: 'Recipe Step'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

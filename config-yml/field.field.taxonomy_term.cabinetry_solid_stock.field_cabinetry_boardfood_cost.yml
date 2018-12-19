@@ -1,0 +1,25 @@
+uuid: a6c813a2-9392-46c7-b495-14ed3600e0c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_boardfood_cost
+    - taxonomy.vocabulary.cabinetry_solid_stock
+_core:
+  default_config_hash: e3k1-YSc-qpajW3bGl1SdYXseQts_PLuMh6u4mWDyO4
+id: taxonomy_term.cabinetry_solid_stock.field_cabinetry_boardfood_cost
+field_name: field_cabinetry_boardfood_cost
+entity_type: taxonomy_term
+bundle: cabinetry_solid_stock
+label: 'Cost Per BoardFoot'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

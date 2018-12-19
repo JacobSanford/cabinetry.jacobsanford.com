@@ -1,0 +1,9 @@
+uuid: f21689ac-cef8-4a48-b326-078dff2d148b
+langcode: en
+status: true
+dependencies: {  }
+id: recipe_variation
+label: 'Recipe Variation'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

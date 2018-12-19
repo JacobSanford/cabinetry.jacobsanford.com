@@ -1,0 +1,25 @@
+uuid: 10553c4a-cfce-4203-a813-b912a1ac185b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_depth
+    - taxonomy.vocabulary.cabinetry_sheet_goods
+_core:
+  default_config_hash: Pt66rOV3ZM8ZhG0XiIka_vlTshDrXJYu93--KvFd2bE
+id: taxonomy_term.cabinetry_sheet_goods.field_cabinetry_depth
+field_name: field_cabinetry_depth
+entity_type: taxonomy_term
+bundle: cabinetry_sheet_goods
+label: 'Sheet Thickness'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal

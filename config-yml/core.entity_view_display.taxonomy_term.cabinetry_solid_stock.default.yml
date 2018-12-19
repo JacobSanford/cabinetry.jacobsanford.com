@@ -1,0 +1,47 @@
+uuid: 35b3112a-1f79-41bb-8e19-a827a956ccbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_solid_stock.field_cabinetry_boardfood_cost
+    - field.field.taxonomy_term.cabinetry_solid_stock.field_cabinetry_width
+    - taxonomy.vocabulary.cabinetry_solid_stock
+  module:
+    - text
+_core:
+  default_config_hash: 8JO1pd0TG-WBChr8ZwFVuDqrkiYDwlq9vtzMcfjMyss
+id: taxonomy_term.cabinetry_solid_stock.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_solid_stock
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cabinetry_boardfood_cost:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_width:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden: {  }

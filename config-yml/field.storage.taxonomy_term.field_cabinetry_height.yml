@@ -1,0 +1,22 @@
+uuid: 6cbc92bb-d2d5-4428-8198-85d95a562d23
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: wEgugvsdhkPVDj8Ihl5BWb6OEHnlwBDjbK8vOJUDyVg
+id: taxonomy_term.field_cabinetry_height
+field_name: field_cabinetry_height
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,111 @@
+h1.recipe-title {
+    text-transform: uppercase;
+}
+
+div.recipe-body {
+    color: rgb(26,26,26);
+    font-family: 'Bitter', serif;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+div.recipe-body > h1 {
+    font-family: 'Noto Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+div.recipe-body > h2.recipe-source {
+    font-family: 'Noto Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 100;
+    margin-top: 0;
+}
+
+dl.recipe-info > dt {
+    clear: left;
+    float: left;
+    min-width:100px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 15%;
+}
+
+dl.recipe-info > dt::after {
+    content: ":";
+}
+
+dl.recipe-info > dd {
+    font-style: italic;
+}
+
+dl.recipe-info > dd > div.form-type-select {
+    margin-bottom: 0;
+}
+
+tr.recipe-table-step > td {
+    vertical-align: top;
+    padding-bottom: 0;
+    padding-top: 0;
+
+}
+
+tr.recipe-table-step > td p {
+    line-height: 1.0em;
+    font-size: 1.0em;
+}
+
+tr.recipe-table-step > td {
+    background: #FFF;
+}
+
+td.recipe-table-step-procedure > p {
+    margin-bottom: 0;
+    padding-top: 0.5em;
+    line-height: 1.0em;
+}
+
+.recipe-table-step-last-ingredient,
+.recipe-table-step-procedure {
+    border-bottom: 1.5px solid #888;
+}
+
+.recipe-table-step-procedure {
+    width: 35%;
+    min-width: 150px;
+}
+
+td.recipe-table-step-weight,
+td.recipe-table-step-scaling {
+    text-align: center;
+    width: 2em;
+}
+
+td.recipe-table-step-volume {
+    text-align: center;
+    width: 7em;
+}
+
+.recipe-steps > table > thead {
+    text-transform: uppercase;
+}
+
+.recipe-steps > table > thead > tr > th {
+    background: #FFF;
+    color: #000;
+    border-bottom: 2px solid;
+}
+
+.recipe-step-procedure-counter,
+.recipe-step-procedure-text {
+    display: inline-block;
+}
+
+.recipe-step-procedure-counter {
+    width: 4%;
+}
+
+.recipe-step-procedure-text {
+    width: 96%;
+}

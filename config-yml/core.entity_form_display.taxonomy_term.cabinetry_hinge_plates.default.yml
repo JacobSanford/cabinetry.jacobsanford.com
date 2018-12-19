@@ -1,0 +1,47 @@
+uuid: b43fa42c-dacd-4300-b3b6-ec261aeb6822
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_hinge_plates.field_cabinetry_item_cost
+    - taxonomy.vocabulary.cabinetry_hinge_plates
+  module:
+    - path
+    - text
+_core:
+  default_config_hash: BOKl_k5XIQC8oNbNnWwKidZ5DgAFv43ZxXEY7mivig4
+id: taxonomy_term.cabinetry_hinge_plates.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_hinge_plates
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_cabinetry_item_cost:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

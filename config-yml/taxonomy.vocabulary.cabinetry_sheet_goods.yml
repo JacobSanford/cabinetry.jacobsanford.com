@@ -1,0 +1,11 @@
+uuid: c1bf3de3-5f2c-4019-832a-a4e458909f58
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eRgaFNcAekm7JOa5gnYOpf-i7e-1n2MJ3LOThLOQrQ4
+name: 'Sheet Goods'
+vid: cabinetry_sheet_goods
+description: 'Sheet Goods'
+hierarchy: 0
+weight: 0

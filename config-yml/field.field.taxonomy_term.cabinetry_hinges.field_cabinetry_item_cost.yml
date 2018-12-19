@@ -1,0 +1,27 @@
+uuid: 05c07d98-8dfd-4200-861c-d5fe3b17f53c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_item_cost
+    - taxonomy.vocabulary.cabinetry_hinges
+_core:
+  default_config_hash: WOvW95NTR8GxBXwfvxVa9wtHzWXHMC_oGO4l_BPTSBE
+id: taxonomy_term.cabinetry_hinges.field_cabinetry_item_cost
+field_name: field_cabinetry_item_cost
+entity_type: taxonomy_term
+bundle: cabinetry_hinges
+label: 'Cost / ea'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

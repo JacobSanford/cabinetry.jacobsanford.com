@@ -1,0 +1,25 @@
+uuid: f516b8a0-0815-4e6b-a55b-795caad50f3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_rail_cut_depth
+    - taxonomy.vocabulary.cabinetry_rail_stile_router_bits
+_core:
+  default_config_hash: QIKtw7K1faY1MGjkpBcWkYQHRu3eCTeRL7pTwlHwHM4
+id: taxonomy_term.cabinetry_rail_stile_router_bits.field_cabinetry_rail_cut_depth
+field_name: field_cabinetry_rail_cut_depth
+entity_type: taxonomy_term
+bundle: cabinetry_rail_stile_router_bits
+label: 'Rail Cut Depth'
+description: 'Enter the rail cut depth of the bit, in mm.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal

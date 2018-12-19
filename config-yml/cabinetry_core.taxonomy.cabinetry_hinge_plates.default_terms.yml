@@ -1,0 +1,9 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Blum Mounting Plate'
+    cost: 0.9
+_core:
+  default_config_hash: pL9_61KHIFbbS-u_j24G8eSt3v2cqVA3oTqGTF90QJA

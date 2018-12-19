@@ -1,0 +1,50 @@
+uuid: 8aad8a5f-687f-4a9b-bc21-036e5474c04a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recipe_ingredient.field_recipe_ingredient_name
+    - field.field.paragraph.recipe_ingredient.field_recipe_ingredient_scaling
+    - field.field.paragraph.recipe_ingredient.field_recipe_ingredient_volume
+    - field.field.paragraph.recipe_ingredient.field_recipe_ingredient_weight
+    - paragraphs.paragraphs_type.recipe_ingredient
+id: paragraph.recipe_ingredient.default
+targetEntityType: paragraph
+bundle: recipe_ingredient
+mode: default
+content:
+  field_recipe_ingredient_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recipe_ingredient_scaling:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recipe_ingredient_volume:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recipe_ingredient_weight:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,21 @@
+uuid: 7fdc3522-e355-42f1-8ce6-42a28c5f3a07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recipe_variation_descripti
+    - paragraphs.paragraphs_type.recipe_variation
+  module:
+    - text
+id: paragraph.recipe_variation.field_recipe_variation_descripti
+field_name: field_recipe_variation_descripti
+entity_type: paragraph
+bundle: recipe_variation
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

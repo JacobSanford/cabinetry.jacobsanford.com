@@ -1,0 +1,31 @@
+uuid: 19d6900b-fe09-42b6-8dc0-94e3f0696230
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recipe_variation.field_recipe_variation_descripti
+    - field.field.paragraph.recipe_variation.field_recipe_variation_name
+    - paragraphs.paragraphs_type.recipe_variation
+  module:
+    - text
+id: paragraph.recipe_variation.default
+targetEntityType: paragraph
+bundle: recipe_variation
+mode: default
+content:
+  field_recipe_variation_descripti:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_recipe_variation_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

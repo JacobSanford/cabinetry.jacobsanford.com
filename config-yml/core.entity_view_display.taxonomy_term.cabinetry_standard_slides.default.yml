@@ -1,0 +1,155 @@
+uuid: fabec256-f39e-4514-b6b8-f55aae7ea2a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_item_cost
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_min_cab_dept
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_cd_pro_l
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_ext_loss
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_hol_hab
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_hol_ins
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_length
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_sug_dlen
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_tot_wc
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_vert_bc
+    - field.field.taxonomy_term.cabinetry_standard_slides.field_cabinetry_std_sld_vert_tc
+    - taxonomy.vocabulary.cabinetry_standard_slides
+  module:
+    - text
+_core:
+  default_config_hash: 4eeww2kMBlTZkcSeaGHfmaXxaKV1QnOImBKOvE4hO5w
+id: taxonomy_term.cabinetry_standard_slides.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_standard_slides
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cabinetry_item_cost:
+    weight: 11
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_min_cab_dept:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_cd_pro_l:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_ext_loss:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_hol_hab:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_hol_ins:
+    weight: 10
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_length:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_sug_dlen:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_tot_wc:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_vert_bc:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_std_sld_vert_tc:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden: {  }

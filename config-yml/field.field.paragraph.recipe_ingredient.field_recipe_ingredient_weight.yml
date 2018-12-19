@@ -1,0 +1,23 @@
+uuid: 8c16e38e-5d82-4054-af58-52ba53e06e9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recipe_ingredient_weight
+    - paragraphs.paragraphs_type.recipe_ingredient
+id: paragraph.recipe_ingredient.field_recipe_ingredient_weight
+field_name: field_recipe_ingredient_weight
+entity_type: paragraph
+bundle: recipe_ingredient
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: g
+field_type: decimal

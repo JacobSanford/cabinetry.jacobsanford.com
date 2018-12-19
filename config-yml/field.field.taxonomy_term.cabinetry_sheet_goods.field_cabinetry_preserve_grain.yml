@@ -1,0 +1,25 @@
+uuid: 9443cbcb-11f7-45d7-a0b3-f6e7fb56aaed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_preserve_grain
+    - taxonomy.vocabulary.cabinetry_sheet_goods
+_core:
+  default_config_hash: GDjBAzkgA2yDjZ6tu_PcyIhmMl3g5I_KUt6X3efChVw
+id: taxonomy_term.cabinetry_sheet_goods.field_cabinetry_preserve_grain
+field_name: field_cabinetry_preserve_grain
+entity_type: taxonomy_term
+bundle: cabinetry_sheet_goods
+label: 'Has Wood Grain?'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Has Grain'
+  off_label: 'No Grain'
+field_type: boolean

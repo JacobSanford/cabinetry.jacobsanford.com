@@ -1,0 +1,22 @@
+uuid: 134db4e1-2bc3-41c4-95fe-0bd34e47cc9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: eFTRAAZDNbDJZaF6SAOOMVKWYkP2hetG7dQSFnFY_EY
+id: taxonomy_term.field_cabinetry_std_sld_ext_loss
+field_name: field_cabinetry_std_sld_ext_loss
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

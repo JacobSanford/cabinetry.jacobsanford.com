@@ -1,0 +1,9 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Standard Saw Blade'
+    cut_width: 3.175
+_core:
+  default_config_hash: 5BsZtiJwhvW0_r7Mtj2ekhklj2237BPYAbikmFQBaSc

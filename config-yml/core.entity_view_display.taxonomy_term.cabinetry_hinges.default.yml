@@ -1,0 +1,35 @@
+uuid: 11c5fdd7-69dd-41ee-a038-4b248df52841
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_hinges.field_cabinetry_item_cost
+    - taxonomy.vocabulary.cabinetry_hinges
+  module:
+    - text
+_core:
+  default_config_hash: uszDt8gAQF_FgWkldgxc5xO_rP_EzU74b4enTWHcla0
+id: taxonomy_term.cabinetry_hinges.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_hinges
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cabinetry_item_cost:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden: {  }

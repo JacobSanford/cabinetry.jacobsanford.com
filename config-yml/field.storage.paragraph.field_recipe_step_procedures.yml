@@ -1,0 +1,19 @@
+uuid: 2a771b25-b6e3-4492-9553-991e5051765f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_recipe_step_procedures
+field_name: field_recipe_step_procedures
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

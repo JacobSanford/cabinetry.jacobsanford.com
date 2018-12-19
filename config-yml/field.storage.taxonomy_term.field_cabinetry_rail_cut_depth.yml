@@ -1,0 +1,22 @@
+uuid: 910a87b3-98f1-4eb4-9b2b-a976ac4a0f25
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: Co2sib5PZycJ9SsuPe3oIZ4M2OwfLg0pN_KQy5xhg7Y
+id: taxonomy_term.field_cabinetry_rail_cut_depth
+field_name: field_cabinetry_rail_cut_depth
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

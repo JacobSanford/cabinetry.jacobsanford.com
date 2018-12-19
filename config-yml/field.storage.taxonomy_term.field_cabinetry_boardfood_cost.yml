@@ -1,0 +1,22 @@
+uuid: 16ee78b4-9ede-491a-a8a2-a0006d6b07cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: xBX_LQBjuTiKADKCZwQUQugg4WREoHTzzqCIunKxSYc
+id: taxonomy_term.field_cabinetry_boardfood_cost
+field_name: field_cabinetry_boardfood_cost
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

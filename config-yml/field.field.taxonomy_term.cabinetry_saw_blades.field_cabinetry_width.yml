@@ -1,0 +1,25 @@
+uuid: b98cd601-cd55-4ff8-8771-23b80ce6aba2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_width
+    - taxonomy.vocabulary.cabinetry_saw_blades
+_core:
+  default_config_hash: QCTiC1vJ2esn_OGvkuqa_admqoiKbqwEXbfkzFJLdMA
+id: taxonomy_term.cabinetry_saw_blades.field_cabinetry_width
+field_name: field_cabinetry_width
+entity_type: taxonomy_term
+bundle: cabinetry_saw_blades
+label: 'Blade Cut Width'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal

@@ -1,0 +1,47 @@
+uuid: 6d0d2cf3-e042-49a9-afdc-aadf471faa4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cabinetry_rail_stile_router_bits.field_cabinetry_rail_cut_depth
+    - field.field.taxonomy_term.cabinetry_rail_stile_router_bits.field_cabinetry_rail_cut_thickne
+    - taxonomy.vocabulary.cabinetry_rail_stile_router_bits
+  module:
+    - text
+_core:
+  default_config_hash: PJzXVM2wSdktmgQwbBDVVsump-ogdaVpX_HOOrXIaOI
+id: taxonomy_term.cabinetry_rail_stile_router_bits.default
+targetEntityType: taxonomy_term
+bundle: cabinetry_rail_stile_router_bits
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cabinetry_rail_cut_depth:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_cabinetry_rail_cut_thickne:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden: {  }

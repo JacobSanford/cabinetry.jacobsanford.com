@@ -1,0 +1,22 @@
+uuid: a50266ee-6127-4622-9bc8-94f9aa885509
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: 1E4wJ4qjMizDmnUnQUfqBzPqDQywNlGbe4809Ui6cx8
+id: taxonomy_term.field_cabinetry_rail_cut_thickne
+field_name: field_cabinetry_rail_cut_thickne
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

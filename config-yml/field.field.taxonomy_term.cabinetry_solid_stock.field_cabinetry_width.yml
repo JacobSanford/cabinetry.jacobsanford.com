@@ -1,0 +1,27 @@
+uuid: e9cbf823-72e7-443e-89de-e01cf6d6a37a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_width
+    - taxonomy.vocabulary.cabinetry_solid_stock
+_core:
+  default_config_hash: nSOrHu_HhaMv3rlw_DXq5nPbeqM8YxViEUjuXcrZZCk
+id: taxonomy_term.cabinetry_solid_stock.field_cabinetry_width
+field_name: field_cabinetry_width
+entity_type: taxonomy_term
+bundle: cabinetry_solid_stock
+label: 'Length of Stock'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 2438.4
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal

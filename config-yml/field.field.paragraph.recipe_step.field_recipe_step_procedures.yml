@@ -1,0 +1,21 @@
+uuid: 1dd5eb3b-9916-4cf3-b38e-4f055ad23ba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recipe_step_procedures
+    - paragraphs.paragraphs_type.recipe_step
+  module:
+    - text
+id: paragraph.recipe_step.field_recipe_step_procedures
+field_name: field_recipe_step_procedures
+entity_type: paragraph
+bundle: recipe_step
+label: Procedures
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

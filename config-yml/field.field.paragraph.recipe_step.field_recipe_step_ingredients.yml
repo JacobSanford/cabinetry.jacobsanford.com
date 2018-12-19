@@ -1,0 +1,34 @@
+uuid: 924489f0-4b97-47f4-9a68-7b530b4ddb3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recipe_step_ingredients
+    - paragraphs.paragraphs_type.recipe_ingredient
+    - paragraphs.paragraphs_type.recipe_step
+  module:
+    - entity_reference_revisions
+id: paragraph.recipe_step.field_recipe_step_ingredients
+field_name: field_recipe_step_ingredients
+entity_type: paragraph
+bundle: recipe_step
+label: Ingredients
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      recipe_ingredient: recipe_ingredient
+    target_bundles_drag_drop:
+      recipe_ingredient:
+        enabled: true
+        weight: 3
+      recipe_step:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

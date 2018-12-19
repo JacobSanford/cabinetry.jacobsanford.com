@@ -1,0 +1,9 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Blum Full Overlay Hinge'
+    cost: 3.35
+_core:
+  default_config_hash: zQGILYeDu-X8y0lJkeTD_WZt1uZzb1nRz74oPXr-PXs

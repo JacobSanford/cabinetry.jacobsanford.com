@@ -1,0 +1,14 @@
+langcode: en
+status: true
+mode: default
+items:
+  -
+    name: 'Shaker Door Bit from Rockler'
+    cut_depth: 9.5
+    slot_thickness: !!float 6
+  -
+    name: 'Freud 97-156 set with BackCutters'
+    cut_depth: 11.1125
+    slot_thickness: !!float 6
+_core:
+  default_config_hash: rQWJz1CfzyaLuRlkJrbgKDsG5RTSzSewIxKxfm96Se4

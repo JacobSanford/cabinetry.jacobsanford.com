@@ -1,0 +1,19 @@
+uuid: e3194142-3b7d-47ea-8188-3a56dd986bc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_yield
+    - node.type.recipe
+id: node.recipe.field_recipe_yield
+field_name: field_recipe_yield
+entity_type: node
+bundle: recipe
+label: Yield
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

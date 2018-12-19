@@ -1,0 +1,20 @@
+uuid: 96fec478-5a35-4c33-b42c-a411e83ac473
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: uLx7AO4BuugjQuibpjuSLtacIQ3unzy1DJeaAUIR9-Q
+id: taxonomy_term.field_cabinetry_preserve_grain
+field_name: field_cabinetry_preserve_grain
+entity_type: taxonomy_term
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

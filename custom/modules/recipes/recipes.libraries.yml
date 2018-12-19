@@ -1,0 +1,4 @@
+recipe-style:
+  css:
+    theme:
+      css/recipe.css: {}

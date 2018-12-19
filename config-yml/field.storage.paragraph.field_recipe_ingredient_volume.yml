@@ -1,0 +1,21 @@
+uuid: db686d53-bc00-4ec7-a4f9-f216c003c070
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_recipe_ingredient_volume
+field_name: field_recipe_ingredient_volume
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

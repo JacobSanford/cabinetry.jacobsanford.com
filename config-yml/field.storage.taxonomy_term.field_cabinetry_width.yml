@@ -1,0 +1,22 @@
+uuid: 878f2a4a-e235-42f3-872a-bc852537cf30
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: pK9BsnLGhj4L8IVAs3qdM2ZH2nvQlHYj4_mPH5wX820
+id: taxonomy_term.field_cabinetry_width
+field_name: field_cabinetry_width
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: c928e057-9806-4692-8a73-7aa8bcd28433
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_time_estimate
+    - node.type.recipe
+id: node.recipe.field_recipe_time_estimate
+field_name: field_recipe_time_estimate
+entity_type: node
+bundle: recipe
+label: 'Time Estimate'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

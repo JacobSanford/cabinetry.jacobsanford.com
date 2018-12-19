@@ -1,0 +1,27 @@
+uuid: 606ac3eb-691c-46f1-a3b1-d068ecb5a279
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_item_cost
+    - taxonomy.vocabulary.cabinetry_hinge_plates
+_core:
+  default_config_hash: QgwOOvwVIHfSCu1DNp9WLbsqB35AQJi4Lds_aqooJ5A
+id: taxonomy_term.cabinetry_hinge_plates.field_cabinetry_item_cost
+field_name: field_cabinetry_item_cost
+entity_type: taxonomy_term
+bundle: cabinetry_hinge_plates
+label: 'Cost / ea'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

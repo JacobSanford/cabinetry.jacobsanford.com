@@ -1,0 +1,11 @@
+uuid: f853bb02-153d-445f-be74-56a8585e20f1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: tlIXWgCJnEE0ahc3dB6tV0C_haW-S3_Ez8PasqgsWuo
+name: 'Solid Stock'
+vid: cabinetry_solid_stock
+description: 'Solid Stock'
+hierarchy: 0
+weight: 0

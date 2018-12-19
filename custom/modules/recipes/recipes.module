@@ -1,0 +1,271 @@
+<?php
+
+/**
+ * @file
+ * Contains recipes.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+const RECIPES_VOLUME_ML =  0;
+const RECIPES_VOLUME_CUP =  1;
+
+/**
+ * Implements hook_help().
+ */
+function recipes_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the recipes module.
+    case 'help.page.recipes':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Recipes') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function recipes_theme() {
+  return [
+    'node__recipe' => [
+      'template' => 'node--recipe',
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function recipes_preprocess_node(&$variables, &$node) {
+  $node = $variables['elements']['#node'];
+  $type = $node->getType();
+  $nid = $node->id();
+
+  if ($type == 'recipe') {
+    $rows = [];
+    $steps = $node->get('field_recipe_steps')->referencedEntities();
+    $procedure_counter = 0;
+
+    $volume_format = RECIPES_VOLUME_ML;
+
+    $scaling = [];
+    $scaling_factors = $node->get('field_recipe_scales')->referencedEntities();
+    foreach ($scaling_factors as $scaling_factor) {
+      $scaling[$scaling_factor->get('field_recipe_scaling_factor')->value] = $scaling_factor->get('field_recipe_scaling_label')->value;
+    }
+
+    if (!empty($scaling)) {
+      $variables['scaling_select'] = [
+        '#type' => 'select',
+        '#options' => $scaling,
+        '#ajax' => array(
+          'wrapper' => 'recipe-step-table',
+          'callback' => '_test_ajax',
+          'event' => 'change',
+        ),
+      ];
+    }
+    elseif (!empty($node->get('field_recipe_yield')->value)) {
+      $variables['scaling_select'] = [
+        '#type' => 'select',
+        '#options' => [
+          '1' => $node->get('field_recipe_yield')->value,
+        ],
+      ];
+    }
+    else {
+      $variables['scaling_select'] = t('As written');
+    }
+
+    foreach ($steps as $step_index => $step) {
+      $ingredients = $step->get('field_recipe_step_ingredients')->referencedEntities();
+      $procedures = $step->get('field_recipe_step_procedures');
+      $total_rows_in_step = count($ingredients);
+
+      $ingredient_procedure = NULL;
+      foreach ($procedures as $procedure) {
+        $procedure_counter++;
+        $counter_div = "<div class='recipe-step-procedure-counter'>$procedure_counter</div>";
+        $procedure_div = "<div class='recipe-step-procedure-text'>$procedure->value</div>";
+        $ingredient_procedure .= "<div class='recipe-step-procedure-item'>" . $counter_div . $procedure_div . "</div>";
+      }
+
+      $ingredient_counter = 0;
+      foreach ($ingredients as $ingredient_index => $ingredient) {
+        $ingredient_counter++;
+        $procedure_cell = [
+          'data' => ['#markup' => $ingredient_procedure],
+          'class' => 'recipe-table-step-procedure',
+          'rowspan'=> $total_rows_in_step,
+        ];
+
+        $ingredient_row = [
+          'data' => [
+            [
+              'data' => ['#markup' => $ingredient->get('field_recipe_ingredient_name')->value],
+              'class' => 'recipe-table-step-names',
+            ],
+            [
+              'data' => ['#markup' => _recipe_format_volume($ingredient, $volume_format)],
+              'class' => 'recipe-table-step-volume',
+            ],
+            [
+              'data' => ['#markup' => _recipe_format_weight($ingredient)],
+              'class' => 'recipe-table-step-weight',
+            ],
+            [
+              'data' => ['#markup' => _recipe_format_scaling($ingredient)],
+              'class' => 'recipe-table-step-scaling',
+            ],
+            [
+              'data' => ['#markup' => $ingredient->get('field_recipe_ingredient_approx_m')->value],
+              'class' => 'recipe-table-step-measure-notes',
+            ],
+          ],
+          'class' => [
+            'recipe-table-step',
+          ]
+        ];
+
+        if ($ingredient_counter == 1) {
+          $ingredient_row['data'][] = $procedure_cell;
+        }
+
+        if ($ingredient_counter == $total_rows_in_step) {
+          $ingredient_row['class'][] = 'recipe-table-step-last-ingredient';
+        }
+
+        $rows[] = $ingredient_row;
+      }
+      $step_count = $step_index + 1;
+    }
+
+    $header = [
+      'Ingredient(s)',
+      'Volume',
+      'Weight',
+      'Scaling',
+      'Notes',
+      'Procedure(s)',
+    ];
+
+    $variables['step_table'] = [
+      '#type' => 'table',
+      '#header' => $header,
+      '#rows' => $rows,
+      '#attributes' => [
+        'class' => ['recipe-table'],
+        'id' => ['recipe-step-table']
+      ],
+    ];
+  }
+
+}
+
+function _recipe_format_weight($ingredient) {
+  if (empty($ingredient->get('field_recipe_ingredient_weight')->value)) {
+    return NULL;
+  }
+
+  $formatted = floatval(
+    $ingredient->get('field_recipe_ingredient_weight')->value
+  );
+
+  return $formatted . 'g';
+}
+
+function _recipe_format_volume($ingredient, $format) {
+  if (empty($ingredient->get('field_recipe_ingredient_volume')->value)) {
+    return NULL;
+  }
+
+  if ($format == RECIPES_VOLUME_ML) {
+    return _recipe_format_volume_ml($ingredient);
+  }
+  if ($format == RECIPES_VOLUME_CUP) {
+    return _recipe_format_volume_cup($ingredient);
+  }
+
+  return NULL;
+}
+
+function _recipe_format_volume_ml($ingredient) {
+  $formatted = floatval(
+    $ingredient->get('field_recipe_ingredient_volume')->value
+  );
+  return $formatted . 'mL';
+}
+
+function _recipe_format_volume_cup($ingredient, $format) {
+  $measure_amounts = [];
+  $ml_value = $ingredient->get('field_recipe_ingredient_volume')->value;
+
+  $cups_total = 0;
+  $cups = floor($ml_value/250);
+  $remaining_volume = $ml_value - ($cups * 250);
+  $cups_total += $cups;
+
+  $half_cups = floor($remaining_volume / 125);
+  $remaining_volume = $remaining_volume - ($half_cups * 125);
+  $cups_total += 0.5 * $half_cups;
+
+  $third_cups = floor($remaining_volume / 83.3);
+  $remaining_volume = $remaining_volume - ($third_cups * 83.3);
+  $cups_total += 0.33 * $third_cups;
+
+  $quarter_cups = floor($remaining_volume / 62.5);
+  $remaining_volume = $remaining_volume - ($quarter_cups * 62.5);
+  $cups_total += 0.25 * $quarter_cups;
+
+  if ($cups_total > 0) {
+    $measure_amounts[] = "{$cups_total}C";
+  }
+
+  $tbsp = floor($remaining_volume / 15);
+  if ($tbsp > 0) {
+    $remaining_volume = $remaining_volume - ($tbsp * 15);
+    $measure_amounts[] = "{$tbsp}T";
+  }
+
+  $tsp_total = 0;
+  $tsp = floor($remaining_volume / 5);
+  if ($tsp > 0) {
+    $remaining_volume = $remaining_volume - ($tsp * 5);
+    $tsp_total += $tsp;
+  }
+
+  $half_tsp = floor($remaining_volume / 2.5);
+  if ($half_tsp > 0) {
+    $remaining_volume = $remaining_volume - ($half_tsp * 2.5);
+    $tsp_total += $half_tsp * 0.5;
+  }
+
+  if ($tsp_total > 0) {
+    $measure_amounts[] = "{$tsp_total}t";
+  }
+
+  return implode(', ', $measure_amounts);
+}
+
+function _recipe_format_scaling($ingredient) {
+  if (empty($ingredient->get('field_recipe_ingredient_scaling')->value)) {
+    return NULL;
+  }
+
+  $formatted = floatval(
+    $ingredient->get('field_recipe_ingredient_scaling')->value
+  );
+
+  return $formatted . '%';
+}
+
+function _test_ajax(array &$form, FormStateInterface $form_state) {
+  $markup = '<h1>H3llo!</h1>';
+  return ['#markup' => $markup];
+}

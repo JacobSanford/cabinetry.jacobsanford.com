@@ -1,0 +1,11 @@
+uuid: ed7d8111-804b-4994-9687-f0aab320e8ee
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Tb1Nw_7Qx4U5U7Tk7VPfUq4_PRKyRtvWnHfkFyYxDdU
+name: 'Standard Drawer Slides'
+vid: cabinetry_standard_slides
+description: 'Slides in Blum 230M Series'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,11 @@
+uuid: e5f5c931-edb0-47aa-a81d-f86883a15745
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AdVXu542bO8U8bjL5-kAZaCdR7x_2gRS0MOidk2Pwr0
+name: 'Saw Blades'
+vid: cabinetry_saw_blades
+description: 'Saw blades used in cutting wood pieces.'
+hierarchy: 0
+weight: 0

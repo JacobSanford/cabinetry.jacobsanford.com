@@ -1,0 +1,25 @@
+uuid: 52b97375-f49b-49c0-9412-bb7727b77438
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cabinetry_height
+    - taxonomy.vocabulary.cabinetry_sheet_goods
+_core:
+  default_config_hash: 4CrBsouyTgIq4DQ9QoEF9-bgXUhW8o7hbu-eZGq3-wc
+id: taxonomy_term.cabinetry_sheet_goods.field_cabinetry_height
+field_name: field_cabinetry_height
+entity_type: taxonomy_term
+bundle: cabinetry_sheet_goods
+label: 'Sheet Height'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: mm
+field_type: decimal

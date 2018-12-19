@@ -1,0 +1,21 @@
+uuid: 76967ae3-bed6-40dc-b7b6-d35747d75031
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_recipe_ingredient_name
+field_name: field_recipe_ingredient_name
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
